@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Report</title>
+    <style>
+        /* Main Page Layout */
+        #front-page {
+            width: 200mm;
+            height: 260mm;
+            margin: 0;
+            border: 50px solid #f7941d;
+            border-radius: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+            page-break-before: always;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Upper Section with Bottom Orange Border */
+        .top-section {
+            width: 85%;
+            height: 60%;
+            margin: auto;
+            margin-top: 30px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-bottom: 8px solid #f7941d; /* Orange bottom border */
+            text-align: center;
+        }
+
+        /* Logo */
+        .logo {
+            width: 300px;
+        }
+
+        /* Report Title */
+        .report-title {
+            font-size: 30px;
+            font-weight: bold;
+            color: #2e3b4e;
+            margin-top: 20px;
+        }
+
+        /* Lower Section */
+        .bottom-section {
+            width: 100%;
+            height: 30%;
+            position: absolute;
+            bottom: 0;
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Security Shield Image */
+        .shield {
+            width: 150px;
+            margin-left: 30px;
+        }
+
+        /* Report Info */
+        .report-info {
+            flex-grow: 1;
+            text-align: left;
+            padding-left: 50px;
+            font-size: 18px;
+            color: #2e3b4e;
+            line-height: 1.5;
+        }
+
+        .report-info strong {
+            font-weight: bold;
+        }
+
+        /* Date */
+        .report-date {
+            font-size: 16px;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* Force background colors when printing */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: white;
+            }
+            .top-section {
+                border-color: #f7941d !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="front-page">
+        <!-- Upper Section with Bottom Orange Border -->
+        <div class="top-section">
+            <img src="./Netsmartz_logo.png" alt="Company Logo" class="logo"><br>
+            <div class="report-title">
+                Web Application Penetration Test Report
+            </div>
+        </div>
+
+        <!-- White Section with Title & Shield -->
+        <div class="bottom-section">
+            <img src="./Shield.png" alt="Security Shield" class="shield">
+            <div class="report-info">
+                <strong>Application Name:</strong> <span>XYZ.com</span> <br>
+                <p class="report-date"><strong>Date:</strong> <span id="report-date"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("report-date").innerText = new Date().toDateString();
+    </script>
+</body>
+</html>
+<br>
